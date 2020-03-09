@@ -1,0 +1,28 @@
+1.在public中添加四个对应的html页面
+2.在config文件中的paths.js中添加对应文件
+3.修改webpack.config.js中的entry数组，修改为{}
+entry: {
+    index: [path.appIndexJs, isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient').filter(Boolean)],
+    query: [path.appqueryJs, isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient').filter(Boolean)],
+    ticket: [path.appTicketJs, isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient').filter(Boolean)],
+    order: [path.appOrderJs, isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient').filter(Boolean)]
+}
+4.添加webpack.config.js中的plugin（每个对应的页面对应一个HtmlWebpackPlugin）
+
+5.允许跨域
+在package.json中添加"proxy": "http://localhost:5000"
+
+6.校验props
+$npm install --save prop-types
+
+7.classname
+$npm install --save classname
+
+8.日期第三方插件
+$npm install --save dayjs
+
+9.解析Uri
+$npm install --save urijs
+
+10.给小时补充0  09:00
+$npm install --save left-pad
